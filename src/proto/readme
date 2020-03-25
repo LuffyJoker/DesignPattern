@@ -1,0 +1,15 @@
+原型模式：
+    1、对 SimpleProto 说明：
+        a、通过实现 Cloneable 接口实现原型模式
+        b、对于基本数据类型，拷贝的是数据内容，对于引用类型，拷贝的是引用。如果要在此基础之上实现深拷贝，那么，引用类型的成员变量所属的类，也必须实现 Cloneable 接口，
+    重写 clone 方法，在 clone 方法内部，复制内部元素。如 ArrayList 的内部实现。
+        try {
+            ArrayList<?> v = (ArrayList<?>) super.clone();
+            v.elementData = Arrays.copyOf(elementData, size);
+            v.modCount = 0;
+            return v;
+        } catch (CloneNotSupportedException e) {
+            // this shouldn't happen, since we are Cloneable
+            throw new InternalError(e);
+        }
+    2、DeepClone 直接为深拷贝模式，通过 IO 实现。
