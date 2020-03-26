@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * @author Mr.Q
  * @date 2020/3/25 15:59
- * desc：原型模式：浅拷贝/深拷贝，详细说明，见 readme
+ * desc：原型模式：浅拷贝/深拷贝，详细说明，见 工厂模式
  */
 public class SimpleProto implements Cloneable {
     public String name;
